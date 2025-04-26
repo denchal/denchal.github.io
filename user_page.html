@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpisMaker</title>
+  <link href="css/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+</head>
+<body class="flex h-screen">
+  <div class="w-full px-6 py-8 place-items-center bg-gray-200">
+    <button id="dashboard" class="hover:bg-indigo-900 text-white absolute top-6 right-6 rounded-lg py-2 px-4 shadow-lg bg-indigo-600 cursor-pointer">
+      Powrót na stronę główną
+    </button>
+    <div class="w-full bg-white max-w-3xl mt-20 flex flex-col items-center py-12 px-6 rounded-lg shadow-lg bg-gray-200">
+      <div id="name" class="w-full max-w-3xl p-3 text-4xl line-height-1.6 text-center font-bold text-orange-500">
+        Ładowanie...
+      </div>
+      <div id="plan" class=" w-full bg-white mt-3 max-w-3xl p-3 rounded-lg shadow-lg text-lg line-height-1.6">
+        Ładowanie...
+      </div>
+      <div id="left" class=" w-full bg-white mt-3 max-w-3xl p-3 rounded-lg shadow-lg text-lg line-height-1.6">
+        Ładowanie...
+      </div>
+      
+      <button id="upgrade" class="w-1/3 mt-6 py-3 px-3 bg-indigo-600 text-white rounded-lg text-l md:text-xl hover:bg-indigo-900 cursor-pointer">Ulepsz plan</button>
+      <button id="logout" class="w-1/3 mt-3 py-3 px-3 bg-orange-500 text-white rounded-lg text-l md:text-xl hover:bg-orange-600 cursor-pointer">Wyloguj się</button>
+      </div>
+    </div>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 flex justify-center items-start pt-10 pb-10 z-50 transition-opacity duration-300 opacity-0 pointer-events-none overflow-y-auto p-4">
+      <div id="modal" class="bg-white w-full max-w-5xl rounded-2xl p-6 sm:p-8 transform scale-90 opacity-0 transition-all duration-300">
+        <h1 class="text-3xl font-bold text-center mb-6">Ulepsz swój plan</h1>
+        
+        <!-- Karty obok siebie -->
+        <div class="flex flex-col md:flex-row gap-6 justify-center items-stretch" >
+    
+          <div id="free" class="flex flex-col justify-between bg-gray-100 rounded-xl p-6 text-center hover:bg-gray-200 transition md:basis-1/3 min-h-[500px] border-2 border-transparent relative">
+            <div id="currFree" class="hidden absolute top-2 right-2 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Aktualny</div>
+            
+            <div class="flex flex-col gap-4 min-h-85">
+              <h3 class="text-2xl font-semibold mb-2">Plan Free</h3>
+              <p class="text-gray-600 min-h-[120px]">Najlepszy dla początkujących, oraz osób sprzedających okazjonalnie niewiele przedmiotów.</p>
+              <ul class="list-disc list-inside text-left px-2 text-sm">
+                <li>Tworzenie do 5 opisów dziennie</li>
+                <li>Bezpłatny na zawsze!</li>
+              </ul>
+            </div>
+            
+            <div class="mt-auto">
+              <h3 class="text-xl font-semibold mb-2">Za darmo!</h3>
+              <button class="w-full py-3 px-3 bg-indigo-600 text-white rounded-lg text-l md:text-xl hover:bg-indigo-900 cursor-pointer">Wybierz</button>
+            </div>
+          </div>
+    
+          <div id="pro" class="flex flex-col justify-between bg-gray-100 rounded-xl p-6 text-center hover:bg-gray-200 transition md:basis-1/3 min-h-[500px] border-2 border-transparent relative">
+            <div id="currPro" class="hidden absolute top-2 right-2 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Aktualny</div>
+            
+            <div class="flex flex-col gap-4 min-h-85">
+              <h3 class="text-2xl font-semibold mb-2">Plan Pro</h3>
+              <p class="text-gray-600 min-h-[120px]">Idealny dla osób które chcą rozwinąć swój biznes oraz małych firm. Pozwala na korzystanie ze wszystkich dostępnych na stronie narzędzi.</p>
+              <ul class="list-disc list-inside text-left px-2 text-sm">
+                <li>Tworzenie do 30 opisów dziennie</li>
+                <li>Dostęp do różnych stylów i szablonów opisów</li>
+                <li>Możliwość wyboru długości opisu</li>
+                <li>Dostosowanie opisu pod najpopularniejsze portale sprzedażowe</li>
+                <li>Przyspieszona pomoc techniczna</li>
+              </ul>
+            </div>
+            
+            <div class="mt-auto">
+              <h3 class="text-xl font-semibold mb-2">30 zł / msc</h3>
+              <button class="w-full py-3 px-3 bg-indigo-600 text-white rounded-lg text-l md:text-xl hover:bg-indigo-900 cursor-pointer">Wybierz</button>
+            </div>
+          </div>
+    
+          <div id="unlimited" class="flex flex-col justify-between bg-gray-100 rounded-xl p-6 text-center hover:bg-gray-200 transition md:basis-1/3 min-h-[500px] border-2 border-transparent relative">
+            <div id="currUnlimited" class="hidden absolute top-2 right-2 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Aktualny</div>
+            
+            <div class="flex flex-col gap-4">
+              <h3 class="text-2xl font-semibold mb-2">Plan Unlimited</h3>
+              <p class="text-gray-600 min-h-[120px]">Przeznaczony dla dużych firm oraz użytkowników potrzebujących nieograniczonego dostępu.</p>
+              <ul class="list-disc list-inside text-left px-2 text-sm">
+                <li>Wszystko to, co w planie Pro</li>
+                <li>Nielimitowana ilość tworzonych opisów</li>
+                <li>Pierwszeństwo w uzyskiwaniu dostępu do nowych funkcjonalności</li>
+              </ul>
+            </div>
+            
+            <div class="mt-auto">
+              <h3 class="text-xl font-semibold mb-2">100 zł / msc</h3>
+              <button class="w-full py-3 px-3 bg-indigo-600 text-white rounded-lg text-l md:text-xl hover:bg-indigo-900 cursor-pointer">Wybierz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+  
+</body>
+<script src="js/user_panel.js"></script>
+</html>
