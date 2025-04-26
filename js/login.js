@@ -6,7 +6,9 @@ document.getElementById('login').addEventListener('click', async () => {
     try {
       const response = await fetch('https://opis-maker.vercel.app/api/auth/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json',
+                   'Origin': 'https://https://denchal.github.io'
+        },
         body: JSON.stringify({ login: email, pwd: password }),
       });
   
