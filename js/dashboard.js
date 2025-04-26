@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const historyList = document.getElementById('history-list');
   try {
-    const response = await fetch('http://localhost:3000/user/history', {
+    const response = await fetch('https://opis-maker.vercel.app/user/history', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         listItem.innerHTML = `${item.prompt.slice(0,30)}`;
         historyList.appendChild(listItem);
         listItem.addEventListener('click', async () => {
-          const descriptionResponse = await fetch(`http://localhost:3000/user/history/${item._id}`, {
+          const descriptionResponse = await fetch(`https://opis-maker.vercel.app/user/history/${item._id}`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`,

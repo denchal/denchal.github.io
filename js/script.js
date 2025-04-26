@@ -11,7 +11,7 @@ document.getElementById('generate').addEventListener('click', async () => {
   output.innerHTML = 'Generowanie...';
   try {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:3000/desc/generate', {
+    const response = await fetch('https://opis-maker.vercel.app/desc/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
