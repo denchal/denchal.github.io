@@ -4,7 +4,7 @@ document.getElementById('login').addEventListener('click', async () => {
     const output = document.getElementById('output');
   
     try {
-      const response = await fetch('https://opis-maker.vercel.app/auth/login', {
+      const response = await fetch('https://opis-maker.vercel.app/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ login: email, pwd: password }),
