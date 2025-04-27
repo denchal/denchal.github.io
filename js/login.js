@@ -16,7 +16,7 @@ document.getElementById('login').addEventListener('click', async () => {
         const token = data.token;
         localStorage.setItem('token', token);
         output.classList.add('hidden');
-        window.location.href = 'dashboard.html';
+        window.location.href = 'dashboard';
       } else {
         const error = await response.text();
         output.innerHTML = `${error}`;
@@ -32,5 +32,5 @@ document.getElementById('login').addEventListener('click', async () => {
   
 
 document.getElementById('register').addEventListener('click', async () => {
-  window.location.href = 'register.html';
+  window.location.href = 'register';
 });

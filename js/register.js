@@ -12,7 +12,7 @@ document.getElementById('register').addEventListener('click', async () => {
   
       if (response.ok) {
         output.classList.add('hidden');
-        window.location.href = 'login.html';
+        window.location.href = 'login';
       } else {
         const error = await response.text();
         output.innerHTML = `${error}`;
@@ -28,5 +28,5 @@ document.getElementById('register').addEventListener('click', async () => {
   });
   
 document.getElementById('login').addEventListener('click', async () => {
-  window.location.href = 'login.html';
+  window.location.href = 'login';
 });

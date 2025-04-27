@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('token');
   if (!token) {
-    window.location.href = 'login.html';
+    window.location.href = 'login';
     return;
   }
   const message = document.getElementById('name');
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.getElementById('dashboard').addEventListener('click', async () => {
   const token = localStorage.getItem('token');
   if (token) {
-    window.location.href = 'dashboard.html';
+    window.location.href = 'dashboard';
     return;
   }
   else {
-    window.location.href = 'login.html';
+    window.location.href = 'login';
     return;
   }
 });
@@ -79,7 +79,7 @@ document.getElementById('upgrade').addEventListener('click', async () => {
     }, 10);
   }
   else {
-    window.location.href = 'login.html';
+    window.location.href = 'login';
     return;
   }
 });
@@ -95,6 +95,6 @@ document.getElementById('overlay').addEventListener('click', (e) => {
 
 document.getElementById('logout').addEventListener('click', (e) => {
   localStorage.removeItem('token');
-  window.location.href = 'login.html';
+  window.location.href = 'login';
   return;
 });
