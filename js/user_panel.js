@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const currPro = document.getElementById('currPro');
   const currUnlimited = document.getElementById('currUnlimited');
   try {
-    const response = await fetch(`https://opis-maker.vercel.app/api/user/user`, {
+    const response = await fetch(`https://opis-backend.onrender.com/user/user`, {
       method: 'GET',
       headers: { 
         'Authorization': `Bearer ${token}`

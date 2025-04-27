@@ -4,7 +4,7 @@ document.getElementById('register').addEventListener('click', async () => {
     const output = document.getElementById('output');
   
     try {
-      const response = await fetch('https://opis-maker.vercel.app/api/auth/register', {
+      const response = await fetch('https://opis-backend.onrender.com/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ login: email, pwd: password }),
