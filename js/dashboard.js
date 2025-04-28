@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('token');
   if (!token) {
-    window.location.href = 'login.html';
+    window.location.href = 'login';
     return;
   }
   const userbtn = document.getElementById('userlogin');
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 document.getElementById('userlogin').addEventListener('click', async () => {
   const token = localStorage.getItem('token');
   if (!token) {
-    window.location.href = 'login.html';
+    window.location.href = 'login';
     return;
   }
   else {
-    window.location.href = 'user_page.html';
+    window.location.href = 'user_page';
   }
 });
