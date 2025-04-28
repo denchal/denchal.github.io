@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpisMaker</title>
+  <link href="css/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="relative min-h-screen bg-gray-900 text-white">
+  <div class="absolute inset-0">
+    <img src="img/index_bg.jpg" alt="Tło" class="w-full h-full object-cover">
+  </div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+    <div class="flex justify-end p-6">
+      <button id="userlogin" class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 shadow-lg transition">
+        Zaloguj się
+      </button>
+    </div>
+
+    <div class="flex-grow flex flex-col items-center justify-center text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-8 text-shadow-lg text-shadow-black">
+        OpisMaker - Twój Asystent Opisów!
+      </h1>
+      <p class="max-w-2xl text-lg md:text-xl mb-12 leading-relaxed text-shadow-lg text-shadow-black rounded-lg p-3">
+        Jeżeli szukasz prostego, ale rozbudowanego narzędzia do szybkiego tworzenia opisów dla twoich przedmiotów – mamy coś dla ciebie!
+        OpisMaker wykorzystuje AI do błyskawicznego tworzenia opisów aukcji i przedmiotów.  <br>
+        Podaj nazwę, cechy produktu, wybierz styl – a resztę zrobimy za Ciebie! <br>
+        <br>
+        Zarejestruj się już teraz i sprawdź, jakie to proste!
+      </p>
+      <button id="register" class="bg-orange-500 hover:bg-orange-600 text-white text-lg md:text-2xl font-semibold py-4 px-8 rounded-lg shadow-lg shadow-black transition">
+        Zarejestruj się za darmo!
+      </button>
+    </div>
+  </div>
+
+  <script src="js/hello.js"></script>
+</body>
+</html>
