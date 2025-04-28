@@ -1,7 +1,7 @@
 document.getElementById('register').addEventListener('click', async () => {
-  window.location.href = 'public/register.html';
+  window.location.href = 'register';
 });
 
 document.getElementById('userlogin').addEventListener('click', async () => {
-  window.location.href = 'public/login.html';
+  window.location.href = 'login';
 });
